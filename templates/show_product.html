@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Results</h2>
+    {% if products %}
+    <table border="1" cellspacing="0" cellpadding="6">
+        <tr>
+            {% for col in products[0].keys() %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in products %}
+        <tr>
+            {% for value in row.values() %}
+            <td>{{ value }}</td>
+            {% endfor %}
+
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>no phones with this company.</p>
+    {% endif %}
+
+
+   
+    
+</body>
+</html>
