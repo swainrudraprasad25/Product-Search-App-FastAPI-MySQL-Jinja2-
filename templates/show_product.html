@@ -9,18 +9,21 @@
     {% if products %}
     <table border="1" cellspacing="0" cellpadding="6">
         <tr>
-            {% for col in products[0].keys() %}
-            <th>{{ col }}</th>
-            {% endfor %}
+            <th>id</th>
+            <th>prod_name</th>
+            <th>price</th>
+            <th>company</th>  
         </tr>
-        {% for row in products %}
+        {% for p in products %}
         <tr>
-            {% for value in row.values() %}
-            <td>{{ value }}</td>
-            {% endfor %}
-
+            <td>{{ p.id }}</td>
+            <td>{{ p.prod_name }}</td>
+            <td>{{ p.price }}</td>
+            <td>{{ p.company }}</td>
         </tr>
         {% endfor %}
+
+       
     </table>
     {% else %}
     <p>no phones with this company.</p>
